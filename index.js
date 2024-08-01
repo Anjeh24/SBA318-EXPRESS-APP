@@ -14,6 +14,7 @@ app.use('/comments', comments);
 app.use('/view', view);
 
 app.set('view engine', 'pug');
+app.use(express.static('./public'));//serving static files
 
 
 const port = 3000;
