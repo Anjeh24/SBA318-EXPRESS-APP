@@ -8,6 +8,13 @@ const view = require('./routes/view');
 
 const app = express();
 
+//error handling middleware.Credits, Express documentation on error handling middleware
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).send('Something broke!');
+});
+
+
 app.use('/users', users);
 app.use('/posts', posts);
 app.use('/comments', comments);

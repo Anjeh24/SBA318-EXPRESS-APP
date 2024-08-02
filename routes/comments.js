@@ -13,6 +13,11 @@ router.get('/get-user-comments', (req, res) => {
     res.send('users comments');
 });
 
+router.get('/get-user-comment/:commentDate', (req, res) => { //route with parameter for date
+    const commentDate = new Date;
+    res.send(`Comment posted on: ${commentDate}`)
+});
+
 router.post('/create-new-comment', (req, res) => {
     res.send('comment created');
    })

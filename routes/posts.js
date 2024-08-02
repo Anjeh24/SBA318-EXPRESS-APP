@@ -13,6 +13,12 @@ router.get('/get-user-posts', (req, res) => {
     res.send('users posts');
 });
 
+router.get('/search-post', (req, res) => {
+    const theQuery = req.query.query;       //simple route handler for query parameters if any. Credits, geek for geeks
+    const theType  = req.query.category;
+    res.send(`Search result: ${theQuery}, type: ${theType}`);
+})
+
 router.post('/create-new-post', (req, res) => {
     res.send('post created');
    })
